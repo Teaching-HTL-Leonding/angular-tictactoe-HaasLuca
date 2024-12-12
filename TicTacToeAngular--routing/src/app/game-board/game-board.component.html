@@ -1,0 +1,15 @@
+<div id="content">
+  <div id="board">
+    @for (row of board; track row; let x = $index) {
+      @for (field of row; track field; let y = $index) {
+        <div class="cell" (click)="handleCellClick(x, y)">
+          {{ field.innerText }}
+        </div>
+      }
+    }
+  </div>
+  <p>{{ message }}</p>
+  <div id="reset-div">
+    <button id="reset" (click)="resetGame()">Reset</button>
+  </div>
+</div>
